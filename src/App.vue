@@ -1,25 +1,28 @@
 <template>
-  <div id="app" :style="{ backgroundImage: 'url(' + require('../image/bg.png') + ')' }">
+  <div id="app">
     <navbar></navbar>
-    <div class="container mt-5">
-      <router-view/>
-    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import navbar from "@/components/ui/navbar";
+import Navbar from "@/components/ui/navbar";
 
 export default {
   name: "App",
   components: {
-    navbar: navbar
+    navbar: Navbar
   }
 };
 </script>
 
 <style>
 #app {
-  height: 660px;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  /* margin-top: 60px; */
 }
 </style>

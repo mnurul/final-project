@@ -1,50 +1,81 @@
 <template>
   <div class="dashboard">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <b-img
-            id="foto"
-            v-bind="mainProps"
-            :src="require('../../image/img4.jpg')"
-            rounded="circle"
-            alt="Circle image"
-          />
-          <!-- <img :src="require('../../image/mj.jpeg')"> -->
-        </div>
-        <div class="col-md-6">
-          <h1 id="title">Arief Dwi Purnomo</h1>
-        </div>
-      </div>
+    <div id="satu" style="display:block;">
+      <b-carousel
+        id="carousel-1"
+        v-model="slide"
+        :interval="4000"
+        controls
+        indicators
+        background="#ababab"
+        style="text-shadow: 0px 0px 2px #000;"
+        fade
+        @sliding-start="onSlideStart"
+        @sliding-end="onSlideEnd"
+      >
+        <!-- Slides with img slot -->
+        <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
+        <b-carousel-slide>
+          <img
+            slot="img"
+            class="img-fluid"
+            src="../../image/carousel-1.jpg"
+            alt="image slot"
+            style="static"
+          >
+        </b-carousel-slide>
+        <!-- <b-carousel-slide>
+          <img
+            slot="img"
+            class="d-block img-fluid w-100"
+            src="../../image/carousel-2.jpg"
+            alt="image slot"
+          >
+        </b-carousel-slide>
+        <b-carousel-slide>
+          <img
+            slot="img"
+            class="d-block img-fluid w-100"
+            src="../../image/carousel-3.jpg"
+            alt="image slot"
+          >
+        </b-carousel-slide>-->
+      </b-carousel>
+    </div>
+    <div>
+      <h3 id="title_loc">Lokasi Kami</h3>
     </div>
   </div>
 </template>
 
 <script>
 // import image from "./assets/logo.png";
+import Image from "../../image/carousel-1.jpg";
+import Image1 from "../../image/carousel-2.jpg";
+import Image2 from "../../image/carousel-3.jpg";
 
 export default {
   name: "dashborad",
   data() {
     return {
-      mainProps: {
-        width: 370,
-        height: 370,
-        class: "m1"
-      }
+      slide: 0,
+      sliding: null
     };
+  },
+  methods: {
+    onSlideStart(slide) {
+      this.sliding = true;
+    },
+    onSlideEnd(slide) {
+      this.sliding = false;
+    }
   }
 };
 </script>
 
 <style>
-#foto {
-  margin-top: 80px;
-}
-
-#title {
-  margin-top: 160px;
-  margin-left: 90px;
-  font-size: 80px;
+#title_loc {
+  margin-top: 30px;
+  color: #2a9cc7;
 }
 </style>

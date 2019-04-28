@@ -1,4 +1,4 @@
-# web-profile
+# klinik-argya
 
 > A Vue.js project
 

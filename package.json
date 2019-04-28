@@ -1,5 +1,5 @@
 {
-  "name": "web-profile",
+  "name": "klinik-argya",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "mnurul <mnurulislam05@gmail.com>",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.15",
+    "bootstrap-vue": "^2.0.0-rc.19",
     "vue": "^2.6.10",
     "vue-router": "^3.0.1"
   },
